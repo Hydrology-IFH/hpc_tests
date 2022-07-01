@@ -1,0 +1,7 @@
+name: test_jax
+
+channels:
+    - conda-forge
+
+dependencies:
+    - python=3.9

@@ -1,0 +1,7 @@
+name: test_mpi4py_cupy
+
+channels:
+    - conda-forge
+
+dependencies:
+    - python=3.9

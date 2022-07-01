@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -l
 conda env create -f conda-environment.yml
 conda clean -a
 conda activate test_mpi4py_cupy

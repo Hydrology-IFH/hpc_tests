@@ -1,6 +1,6 @@
 #!/bin/sh
-#PBS -l nodes=1:ppn=1
-#PBS -l walltime=00:30:00
+#PBS -l nodes=1:ppn=2
+#PBS -l walltime=00:10:00
 #PBS -l pmem=8000mb
 #PBS -N test
 #PBS -m bea
@@ -8,8 +8,7 @@
 
 # load module dependencies
 module purge
-module load devel/cudnn/9.2
-module load devel/cuda/11.4
+module load lib/cudnn/8.2-cuda-11.4
 module load mpi/openmpi/4.1-gnu-9.2
 export OMP_NUM_THREADS=1
 eval "$(conda shell.bash hook)"

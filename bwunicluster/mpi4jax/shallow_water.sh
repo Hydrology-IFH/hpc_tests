@@ -1,13 +1,7 @@
 #!/bin/sh
-salloc -p dev_gpu_4 --gres=gpu:1 --ntasks 1 --cpus-per-task 1 -t 30 --mem 16000
-salloc -p gpu_4 --gres=gpu:1 --nodes 1 --ntasks 1 --ntasks-per-node 1 --cpus-per-task 1 -t 02:00:00 --mem 16000
-salloc -p gpu_8 --gres=gpu:1 --nodes 1 --ntasks 1 --ntasks-per-node 1 --cpus-per-task 1 -t 02:00:00 --mem 16000
-
 salloc -p dev_gpu_4 --gres=gpu:1 --ntasks 2 --cpus-per-task 1 -t 30 --mem 16000
-salloc -p gpu_4 --gres=gpu:1 --nodes 1 --ntasks 2 --cpus-per-task 1 -t 02:00:00 --mem 16000
-salloc -p gpu_8 --gres=gpu:1 --nodes 1 --ntasks 2 --cpus-per-task 1 -t 02:00:00 --mem 16000
 
-cd ~/hpc_tests/mpi4jax/
+cd ~/hpc_tests/bwunicluster/mpi4jax/
 conda activate test_mpi4jax
 module purge
 module load devel/cudnn/9.2

@@ -1,0 +1,9 @@
+name: test_mpi4jax
+
+channels:
+    - conda-forge
+
+dependencies:
+    - python=3.9
+    - cython
+    - tqdm

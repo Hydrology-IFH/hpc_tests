@@ -23,9 +23,3 @@ def foo(arr):
         token = mpi4jax.send(arr, dest=0, comm=comm, token=token)
 
     return other_arr
-
-
-a = jnp.zeros((3, 3))
-result = foo(a)
-
-print(f'r{rank} | {result}')

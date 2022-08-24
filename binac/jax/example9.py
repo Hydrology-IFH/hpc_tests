@@ -10,21 +10,25 @@ key = random.PRNGKey(0)
 # runs on CPU - numpy
 size = 5000
 x = np.random.normal(size=(size, size)).astype(np.float32)
-print(timeit.timeit(np.dot(x, x.T)))
+np.dot(x, x.T)
+# print(timeit.timeit(np.dot(x, x.T)))
 # 1 loop, best of 5: 1.61 s per loop
 
 # runs on CPU - JAX
 size = 5000
 x = random.normal(key, (size, size), dtype=jnp.float32)
-print(timeit.timeit(jnp.dot(x, x.T).block_until_ready()))
+jnp.dot(x, x.T).block_until_ready()
+# print(timeit.timeit(jnp.dot(x, x.T).block_until_ready()))
 # 1 loop, best of 5: 3.49 s per loop
 
 # runs on GPU
 size = 5000
 x = random.normal(key, (size, size), dtype=jnp.float32)
 x_jax = jax.device_put(x)  # 1. measure JAX device transfer time
-print(timeit.timeit(jnp.dot(x_jax, x_jax.T).block_until_ready()))  # 2. measure JAX compilation time
-print(timeit.timeit(jnp.dot(x_jax, x_jax.T).block_until_ready())) # 3. measure JAX running time
+jnp.dot(x_jax, x_jax.T).block_until_ready()
+jnp.dot(x_jax, x_jax.T).block_until_ready()
+# print(timeit.timeit(jnp.dot(x_jax, x_jax.T).block_until_ready()))  # 2. measure JAX compilation time
+# print(timeit.timeit(jnp.dot(x_jax, x_jax.T).block_until_ready())) # 3. measure JAX running time
 # 1. CPU times: user 102 µs, sys: 42 µs, total: 144 µs
 #    Wall time: 155 µs
 # 2. CPU times: user 1.3 s, sys: 195 ms, total: 1.5 s

@@ -22,7 +22,7 @@ assert cupy.allclose(recvbuf, sendbuf*size)
 if rank == 0:
     buf = cupy.arange(0, 100, dtype=float)
 else:
-    buf = cupy.empty(0, 100, dtype=float)
+    buf = cupy.empty(100, dtype=float)
 cupy.cuda.get_current_stream().synchronize()
 comm.Bcast(buf)
 assert cupy.allclose(buf, cupy.arange(0, 100, dtype=float))
@@ -33,7 +33,7 @@ if rank == 0:
     cupy.cuda.get_current_stream().synchronize()
     comm.Send(buf, dest=1, tag=88)
 else:
-    buf = cupy.empty(0, 20, dtype=float)
+    buf = cupy.empty(20, dtype=float)
     cupy.cuda.get_current_stream().synchronize()
     comm.Recv(buf, source=0, tag=88)
     assert cupy.allclose(buf, cupy.arange(0, 20, dtype=float))

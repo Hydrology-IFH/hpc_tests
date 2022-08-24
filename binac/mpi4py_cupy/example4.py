@@ -1,5 +1,7 @@
 from mpi4py import MPI
 import cupy
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 print(cupy.show_config())
 
 comm = MPI.COMM_WORLD

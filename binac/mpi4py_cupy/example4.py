@@ -1,6 +1,6 @@
 from mpi4py import MPI
 import cupy
-
+print(cupy.show_config())
 
 comm = MPI.COMM_WORLD
 size = comm.Get_size()

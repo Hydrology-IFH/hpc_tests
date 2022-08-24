@@ -7,7 +7,7 @@ comm = MPI.COMM_WORLD
 size = comm.Get_size()
 rank = comm.Get_rank()
 
-sendbuf = cp.arange(10, dtype=float)
+sendbuf = cp.arange(0, 10, dtype=float)
 recvbuf = cp.empty_like(sendbuf, dtype=float)
 assert hasattr(sendbuf, '__cuda_array_interface__')
 assert hasattr(recvbuf, '__cuda_array_interface__')

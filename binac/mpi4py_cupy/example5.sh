@@ -16,4 +16,4 @@ eval "$(conda shell.bash hook)"
 conda activate test_mpi4py_cupy
 cd /home/fr/fr_fr/fr_rs1092/hpc_tests/binac/mpi4py_cupy
 nvidia-smi
-mpirun -n 2 --mca opal_cuda_support 1 python example5.py
+mpirun -np 2 --mca opal_cuda_support 1 --mca btl_openib_warn_default_gid_prefix 0 --mca mpi_warn_on_fork 0 python example5.py

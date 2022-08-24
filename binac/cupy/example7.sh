@@ -14,6 +14,7 @@ module load lib/cudnn/8.2-cuda-11.4
 eval "$(conda shell.bash hook)"
 conda activate test_cupy
 cd /home/fr/fr_fr/fr_rs1092/hpc_tests/binac/cupy
-printf nvidia-smi
+nvidia-smi
+printf "$nvidia-smi"
 
 python example7.py

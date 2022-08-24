@@ -1,6 +1,7 @@
 from mpi4py import MPI
 import cupy as cp
 print(cp.show_config())
+print("CUDA Device: ", cp.cuda.runtime.getDeviceCount())
 
 comm = MPI.COMM_WORLD
 size = comm.Get_size()

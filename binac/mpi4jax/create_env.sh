@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/sh
 conda env create -f conda-environment.yml
 conda clean -a
 conda activate test_mpi4jax

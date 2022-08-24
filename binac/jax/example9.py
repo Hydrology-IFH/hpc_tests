@@ -23,7 +23,7 @@ jnp.dot(x, x.T).block_until_ready()
 
 # runs on GPU
 size = 5000
-x = random.normal(key, (size, size), dtype=jnp.float32)
+x = random.normal(key, (size, size), dtype=np.float32)
 x_jax = jax.device_put(x)  # 1. measure JAX device transfer time
 jnp.dot(x_jax, x_jax.T).block_until_ready()
 jnp.dot(x_jax, x_jax.T).block_until_ready()

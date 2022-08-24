@@ -13,5 +13,4 @@ eval "$(conda shell.bash hook)"
 conda activate test_jax
 cd /home/fr/fr_fr/fr_rs1092/hpc_tests/binac/jax
 nvidia-smi
-export LD_LIBRARY_PATH=/home/fr/fr_fr/fr_rs1092/miniconda3/envs/test_jax/lib
 python example9.py

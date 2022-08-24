@@ -15,6 +15,5 @@ eval "$(conda shell.bash hook)"
 conda activate test_cupy
 cd /home/fr/fr_fr/fr_rs1092/hpc_tests/binac/cupy
 nvidia-smi
-printf "$nvidia-smi"
 
 python example7.py

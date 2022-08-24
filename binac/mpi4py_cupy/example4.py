@@ -7,8 +7,10 @@ size = comm.Get_size()
 rank = comm.Get_rank()
 
 # Allreduce
-sendbuf = cupy.arange(10, dtype=float)
-recvbuf = cupy.empty_like(sendbuf, dtype=float)
+sendbuf = cupy.arange(10, dtype='i')
+recvbuf = cupy.empty(10, dtype='i')
+assert hasattr(sendbuf, '__cuda_array_interface__')
+assert hasattr(recvbuf, '__cuda_array_interface__')
 # always make sure the GPU buffer is ready before any MPI operation
 cupy.cuda.get_current_stream().synchronize()
 comm.Allreduce(sendbuf, recvbuf)

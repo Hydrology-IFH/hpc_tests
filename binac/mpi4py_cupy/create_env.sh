@@ -6,5 +6,5 @@ module purge
 module load mpi/openmpi/4.1-gnu-9.2
 
 pip install mpi4py --no-binary mpi4py
-pip install cupy-cuda101
+pip install cupy-cuda114
 pip cache purge

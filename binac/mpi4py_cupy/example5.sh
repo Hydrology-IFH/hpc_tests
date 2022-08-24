@@ -15,5 +15,5 @@ export OMP_NUM_THREADS=1
 eval "$(conda shell.bash hook)"
 conda activate test_mpi4py_cupy
 cd /home/fr/fr_fr/fr_rs1092/hpc_tests/binac/mpi4py_cupy
-
+nvidia-smi
 mpirun -n 2 python example5.py

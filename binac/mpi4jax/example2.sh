@@ -15,7 +15,7 @@ export OMP_NUM_THREADS=1
 eval "$(conda shell.bash hook)"
 conda activate test_mpi4jax
 cd /home/fr/fr_fr/fr_rs1092/hpc_tests/binac/mpi4jax
-
+nvidia-smi
 MPI4JAX_USE_CUDA_MPI=0 mpirun -n 1 python example2.py
 MPI4JAX_USE_CUDA_MPI=1 mpirun -n 1 python example2.py
 MPI4JAX_USE_CUDA_MPI=0 mpirun -n 2 python example2.py

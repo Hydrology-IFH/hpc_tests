@@ -1,5 +1,5 @@
 #!/bin/sh
-#PBS -l nodes=1:ppn=2:gpus=1
+#PBS -l nodes=1:ppn=2:gpus=1:default
 #PBS -l walltime=00:30:00
 #PBS -l pmem=4000mb
 #PBS -N test
